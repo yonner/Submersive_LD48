@@ -1,5 +1,5 @@
 {
-    "name": "MyControls",
+    "name": "MyControls 1",
     "maps": [
         {
             "name": "Player",
@@ -57,6 +57,14 @@
                     "name": "SubControl - Take Picture",
                     "type": "Button",
                     "id": "c5d420b1-844b-4a47-8c7a-a8721522f2c6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Quit",
+                    "type": "Button",
+                    "id": "8e87fbbc-e697-4102-9040-7ecc0538f57c",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -348,6 +356,17 @@
                     "action": "SubControl - Take Picture",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "53f96fdf-670a-45da-91b2-669056a03f4e",
+                    "path": "<Keyboard>/q",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Quit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -439,14 +458,6 @@
                     "name": "Start",
                     "type": "Button",
                     "id": "48cc0be1-95eb-4697-b37a-6efbc47925aa",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "Quit",
-                    "type": "Button",
-                    "id": "6e568016-02e7-4841-9c5f-52208b3eae21",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -879,17 +890,6 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Start",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "20f4e416-97fc-483e-ad5d-2c95fb42ea5c",
-                    "path": "<Keyboard>/q",
-                    "interactions": "Press",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Quit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/MyControlsUI.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/MyControls 1.inputactions'
 
 using System;
 using System.Collections;
@@ -6,13 +6,13 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-public class @MyControlsUI : IInputActionCollection, IDisposable
+public class @MyControls1 : IInputActionCollection, IDisposable
 {
     public InputActionAsset asset { get; }
-    public @MyControlsUI()
+    public @MyControls1()
     {
         asset = InputActionAsset.FromJson(@"{
-    ""name"": ""MyControlsUI"",
+    ""name"": ""MyControls 1"",
     ""maps"": [
         {
             ""name"": ""Player"",
@@ -70,6 +70,14 @@ public class @MyControlsUI : IInputActionCollection, IDisposable
                     ""name"": ""SubControl - Take Picture"",
                     ""type"": ""Button"",
                     ""id"": ""c5d420b1-844b-4a47-8c7a-a8721522f2c6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Quit"",
+                    ""type"": ""Button"",
+                    ""id"": ""8e87fbbc-e697-4102-9040-7ecc0538f57c"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -361,6 +369,17 @@ public class @MyControlsUI : IInputActionCollection, IDisposable
                     ""action"": ""SubControl - Take Picture"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""53f96fdf-670a-45da-91b2-669056a03f4e"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Quit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -452,14 +471,6 @@ public class @MyControlsUI : IInputActionCollection, IDisposable
                     ""name"": ""Start"",
                     ""type"": ""Button"",
                     ""id"": ""48cc0be1-95eb-4697-b37a-6efbc47925aa"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""Quit"",
-                    ""type"": ""Button"",
-                    ""id"": ""6e568016-02e7-4841-9c5f-52208b3eae21"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -894,17 +905,6 @@ public class @MyControlsUI : IInputActionCollection, IDisposable
                     ""action"": ""Start"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""20f4e416-97fc-483e-ad5d-2c95fb42ea5c"",
-                    ""path"": ""<Keyboard>/q"",
-                    ""interactions"": ""Press"",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Quit"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -981,6 +981,7 @@ public class @MyControlsUI : IInputActionCollection, IDisposable
         m_Player_SubControlsTorch = m_Player.FindAction("SubControls - Torch", throwIfNotFound: true);
         m_Player_SubControlFullStop = m_Player.FindAction("SubControl - FullStop", throwIfNotFound: true);
         m_Player_SubControlTakePicture = m_Player.FindAction("SubControl - Take Picture", throwIfNotFound: true);
+        m_Player_Quit = m_Player.FindAction("Quit", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -994,7 +995,6 @@ public class @MyControlsUI : IInputActionCollection, IDisposable
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
         m_UI_Start = m_UI.FindAction("Start", throwIfNotFound: true);
-        m_UI_Quit = m_UI.FindAction("Quit", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1051,10 +1051,11 @@ public class @MyControlsUI : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_SubControlsTorch;
     private readonly InputAction m_Player_SubControlFullStop;
     private readonly InputAction m_Player_SubControlTakePicture;
+    private readonly InputAction m_Player_Quit;
     public struct PlayerActions
     {
-        private @MyControlsUI m_Wrapper;
-        public PlayerActions(@MyControlsUI wrapper) { m_Wrapper = wrapper; }
+        private @MyControls1 m_Wrapper;
+        public PlayerActions(@MyControls1 wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
@@ -1062,6 +1063,7 @@ public class @MyControlsUI : IInputActionCollection, IDisposable
         public InputAction @SubControlsTorch => m_Wrapper.m_Player_SubControlsTorch;
         public InputAction @SubControlFullStop => m_Wrapper.m_Player_SubControlFullStop;
         public InputAction @SubControlTakePicture => m_Wrapper.m_Player_SubControlTakePicture;
+        public InputAction @Quit => m_Wrapper.m_Player_Quit;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1092,6 +1094,9 @@ public class @MyControlsUI : IInputActionCollection, IDisposable
                 @SubControlTakePicture.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSubControlTakePicture;
                 @SubControlTakePicture.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSubControlTakePicture;
                 @SubControlTakePicture.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSubControlTakePicture;
+                @Quit.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnQuit;
+                @Quit.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnQuit;
+                @Quit.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnQuit;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1117,6 +1122,9 @@ public class @MyControlsUI : IInputActionCollection, IDisposable
                 @SubControlTakePicture.started += instance.OnSubControlTakePicture;
                 @SubControlTakePicture.performed += instance.OnSubControlTakePicture;
                 @SubControlTakePicture.canceled += instance.OnSubControlTakePicture;
+                @Quit.started += instance.OnQuit;
+                @Quit.performed += instance.OnQuit;
+                @Quit.canceled += instance.OnQuit;
             }
         }
     }
@@ -1136,11 +1144,10 @@ public class @MyControlsUI : IInputActionCollection, IDisposable
     private readonly InputAction m_UI_TrackedDevicePosition;
     private readonly InputAction m_UI_TrackedDeviceOrientation;
     private readonly InputAction m_UI_Start;
-    private readonly InputAction m_UI_Quit;
     public struct UIActions
     {
-        private @MyControlsUI m_Wrapper;
-        public UIActions(@MyControlsUI wrapper) { m_Wrapper = wrapper; }
+        private @MyControls1 m_Wrapper;
+        public UIActions(@MyControls1 wrapper) { m_Wrapper = wrapper; }
         public InputAction @Navigate => m_Wrapper.m_UI_Navigate;
         public InputAction @Submit => m_Wrapper.m_UI_Submit;
         public InputAction @Cancel => m_Wrapper.m_UI_Cancel;
@@ -1152,7 +1159,6 @@ public class @MyControlsUI : IInputActionCollection, IDisposable
         public InputAction @TrackedDevicePosition => m_Wrapper.m_UI_TrackedDevicePosition;
         public InputAction @TrackedDeviceOrientation => m_Wrapper.m_UI_TrackedDeviceOrientation;
         public InputAction @Start => m_Wrapper.m_UI_Start;
-        public InputAction @Quit => m_Wrapper.m_UI_Quit;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1195,9 +1201,6 @@ public class @MyControlsUI : IInputActionCollection, IDisposable
                 @Start.started -= m_Wrapper.m_UIActionsCallbackInterface.OnStart;
                 @Start.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnStart;
                 @Start.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnStart;
-                @Quit.started -= m_Wrapper.m_UIActionsCallbackInterface.OnQuit;
-                @Quit.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnQuit;
-                @Quit.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnQuit;
             }
             m_Wrapper.m_UIActionsCallbackInterface = instance;
             if (instance != null)
@@ -1235,9 +1238,6 @@ public class @MyControlsUI : IInputActionCollection, IDisposable
                 @Start.started += instance.OnStart;
                 @Start.performed += instance.OnStart;
                 @Start.canceled += instance.OnStart;
-                @Quit.started += instance.OnQuit;
-                @Quit.performed += instance.OnQuit;
-                @Quit.canceled += instance.OnQuit;
             }
         }
     }
@@ -1296,6 +1296,7 @@ public class @MyControlsUI : IInputActionCollection, IDisposable
         void OnSubControlsTorch(InputAction.CallbackContext context);
         void OnSubControlFullStop(InputAction.CallbackContext context);
         void OnSubControlTakePicture(InputAction.CallbackContext context);
+        void OnQuit(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
@@ -1310,6 +1311,5 @@ public class @MyControlsUI : IInputActionCollection, IDisposable
         void OnTrackedDevicePosition(InputAction.CallbackContext context);
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
         void OnStart(InputAction.CallbackContext context);
-        void OnQuit(InputAction.CallbackContext context);
     }
 }

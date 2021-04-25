@@ -480,6 +480,12 @@ public class SubControllerComponent : MonoBehaviour
         Debug.Log("Trigger has been entered. ");
     }
 
+    public void OnQuitGame(InputAction.CallbackContext context)
+    {
+
+        Application.Quit();
+    }
+
     private void OnTriggerExit(Collider other)
     {
         fishIsInRange = false;
